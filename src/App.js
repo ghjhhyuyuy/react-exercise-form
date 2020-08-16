@@ -5,7 +5,7 @@ import MyProfile from "./components/MyProfile";
 const App = () => {
   return (
     <div className='App'>
-      My Profile
+      <p className="title">My Profile</p>
       <MyProfile/>
     </div>
   );

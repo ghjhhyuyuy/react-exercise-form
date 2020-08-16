@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './myProfile.less';
+import './myProfile.css';
 
 class MyProfile extends Component {
   state = {
@@ -41,23 +41,29 @@ class MyProfile extends Component {
   render() {
     return (
       <form>
-        <label>Name</label>
+        <p className='bold'>Name</p>
         <input
+          className="input"
           type="text"
           value={this.state.name}
           onChange={this.onChangeInputName}
           placeholder="Your name"
-        ></input>
-        <label>Gender</label>
-         <select id="listItem" onChange={this.onChangeInputGender}>
+        ></input><br/>
+        <p className='bold'>Gender</p>
+         <select className="input" id="listItem" onChange={this.onChangeInputGender}>
            <option>Male</option>
            <option>Female</option>
-         </select>   
-        <label>Description</label>
-        <textarea  placeholder="Description about yourself" value={this.state.description} onChange={this.onChangeInputDescription}></textarea >
-        <input type="checkbox" onClick={this.check}></input>
-        <span>I have read the terms of conduct</span>
-        <input type="submit" value="submit" onClick={this.handleSubmit} disabled={!this.state.name || !this.state.gender || !this.state.description || !this.state.isCheck}></input>
+         </select>   <br/>
+        <p className='bold'>Description</p>
+        <textarea  className="description" placeholder="Description about yourself" value={this.state.description} onChange={this.onChangeInputDescription}></textarea ><br/>
+        <div className="marginTop">
+          <input className="checkbox" type="checkbox" onClick={this.check}></input>
+          <span className="lastText">I have read the terms of conduct</span>
+        </div>
+        <div className="center">
+        <input className="button" type="submit" value="submit" onClick={this.handleSubmit} disabled={!this.state.name || !this.state.gender || !this.state.description || !this.state.isCheck}></input>
+        </div>
+        
       </form>
     );
   }
